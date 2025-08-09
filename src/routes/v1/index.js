@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const {info} = require('../../controllers')
+const airplaneRoutes = require('./airplane-routes');
 
-router.get('/info', info)
+// api/v/airplanes Post
+console.log("inside v1 routes");
+router.use('/airplanes', airplaneRoutes);
 
 
 module.exports = router
