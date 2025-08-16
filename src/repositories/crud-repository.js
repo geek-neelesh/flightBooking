@@ -20,7 +20,7 @@ class CrudRepository{
             }
         });
         if(!response){
-            throw new AppError('Failed to delete',StatusCodes.NOT_FOUND)
+            throw new AppError('Failed to delete airplane data',StatusCodes.NOT_FOUND)
         }
         return response;
     }
@@ -44,6 +44,10 @@ class CrudRepository{
                 id: id
             }
         });
+        if(!response[0]){
+            throw new AppError('Failed to update airplane data',StatusCodes.NOT_FOUND)
+
+        }
         return response;
     }
 
