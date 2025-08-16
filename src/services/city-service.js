@@ -22,55 +22,55 @@ async function createCity(data){
 
 }
 
-// async function getAirplanes(){
-//     try{
-//         const airplanes = await airplaneRepository.getAll();
-//         return airplanes;
-//     }catch(error){
-//         throw new AppError('Cannot fetch data of all the airplanes',StatusCodes.INTERNAL_SERVER_ERROR)
-//     }
-// }
+async function getCities(){
+    try{
+        const city = await cityRepository.getAll();
+        return city;
+    }catch(error){
+        throw new AppError('Cannot fetch data of all the cities',StatusCodes.INTERNAL_SERVER_ERROR)
+    }
+}
 
-// async function getAirplane(id){
-//     try{
-//         const airplane = await airplaneRepository.get(id);
-//         return airplane;
-//     }catch(error){
-//         if(error.statusCode == StatusCodes.NOT_FOUND){
-//             throw new AppError('The airplane you requested is not present',error.statusCode);
-//         }
-//         throw new AppError('Cannot fetch data of airplane',StatusCodes.INTERNAL_SERVER_ERROR);
-//     }
-// }
+async function getCity(id){
+    try{
+        const airplane = await cityRepository.get(id);
+        return airplane;
+    }catch(error){
+        if(error.statusCode == StatusCodes.NOT_FOUND){
+            throw new AppError('The city you requested is not present',error.statusCode);
+        }
+        throw new AppError('Cannot fetch data of city',StatusCodes.INTERNAL_SERVER_ERROR);
+    }
+}
 
-// async function destroyAirplane(id){
-//     try{
-//         const airplane = await airplaneRepository.destroy(id);
-//         return airplane;
-//     }catch(error){
-//         if(error.statusCode == StatusCodes.NOT_FOUND){
-//             throw new AppError('The airplane you requested to delete is not present',error.statusCode);
-//         }
-//         throw new AppError('Cannot fetch data of airplane',StatusCodes.INTERNAL_SERVER_ERROR);
-//     }
-// }
+async function destroyCity(id){
+    try{
+        const city = await cityRepository.destroy(id);
+        return city;
+    }catch(error){
+        if(error.statusCode == StatusCodes.NOT_FOUND){
+            throw new AppError('The city you requested to delete is not present',error.statusCode);
+        }
+        throw new AppError('failed to delete city data',StatusCodes.INTERNAL_SERVER_ERROR);
+    }
+}
 
-// async function updateAirplane(id,data){
-//     try{
-//         const airplane = await airplaneRepository.update(id,data);
-//         return airplane;
-//     }catch(error){
-//         if(error.statusCode == StatusCodes.NOT_FOUND){
-//             throw new AppError('The airplane you requested to update is not present',error.statusCode);
-//         }
-//         throw new AppError('Cannot fetch data of airplane',StatusCodes.INTERNAL_SERVER_ERROR);
-//     }
-// }
+async function updatecity(id,data){
+    try{
+        const city = await cityRepository.update(id,data);
+        return city;
+    }catch(error){
+        if(error.statusCode == StatusCodes.NOT_FOUND){
+            throw new AppError('The city you requested to update is not present',error.statusCode);
+        }
+        throw new AppError('Cannot update data of city',StatusCodes.INTERNAL_SERVER_ERROR);
+    }
+}
 
 module.exports = {
     createCity,
-    // getAirplanes,
-    // getAirplane,
-    // destroyAirplane,
-    // updateAirplane
+    getCities,
+    getCity,
+    destroyCity,
+    updatecity
 }

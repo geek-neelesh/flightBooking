@@ -28,93 +28,93 @@ async function createCity(req,res){
 }
 
 /** 
-* GET: /airplanes/
+* GET: /cities/
 * req.body {}
 **/
-// async function getAirplanes(req,res){
-//     try{
-//         const airplanes = await AirplaneService.getAirplanes();
-//         SuccessResponse.data = airplanes;
-//         return res
-//                 .status(StatusCodes.OK)
-//                 .json(SuccessResponse)
+async function getCities(req,res){
+    try{
+        const city = await CityService.getCities();
+        SuccessResponse.data = city;
+        return res
+                .status(StatusCodes.OK)
+                .json(SuccessResponse)
 
-//     }catch(error){
-//         ErrorResponse.error = error;
-//         return res
-//                 .status(error.statusCode)
-//                 .json(ErrorResponse);
+    }catch(error){
+        ErrorResponse.error = error;
+        return res
+                .status(error.statusCode)
+                .json(ErrorResponse);
 
-//     }
-// }
+    }
+}
 
-// /** 
-// * GET: /airplane/:id
-// * req.body {}
-// **/
-// async function getAirplane(req,res){
-//     try{
-//         const airplanes = await AirplaneService.getAirplane(req.params.id);
-//         SuccessResponse.data = airplanes;
-//         return res
-//                 .status(StatusCodes.OK)
-//                 .json(SuccessResponse)
+/** 
+* GET: /cities/:id
+* req.body {}
+**/
+async function getCity(req,res){
+    try{
+        const airplanes = await CityService.getCity(req.params.id);
+        SuccessResponse.data = airplanes;
+        return res
+                .status(StatusCodes.OK)
+                .json(SuccessResponse)
 
-//     }catch(error){
-//         ErrorResponse.error = error;
-//         return res
-//                 .status(error.statusCode)
-//                 .json(ErrorResponse);
+    }catch(error){
+        ErrorResponse.error = error;
+        return res
+                .status(error.statusCode)
+                .json(ErrorResponse);
 
-//     }
-// }
+    }
+}
 
-// /** 
-// * DELETE: /airplane/:id
-// * req.body {}
-// **/
-// async function destroyAirplane(req,res){
-//     try{
-//         const airplanes = await AirplaneService.destroyAirplane(req.params.id);
-//         SuccessResponse.data = airplanes;
-//         return res
-//                 .status(StatusCodes.OK)
-//                 .json(SuccessResponse)
+/** 
+* DELETE: /cities/:id
+* req.body {}
+**/
+async function destroyCity(req,res){
+    try{
+        const city = await CityService.destroyCity(req.params.id);
+        SuccessResponse.data = city;
+        return res
+                .status(StatusCodes.OK)
+                .json(SuccessResponse)
 
-//     }catch(error){
-//         ErrorResponse.error = error;
-//         return res
-//                 .status(error.statusCode)
-//                 .json(ErrorResponse);
+    }catch(error){
+        ErrorResponse.error = error;
+        return res
+                .status(error.statusCode)
+                .json(ErrorResponse);
 
-//     }
-// }
+    }
+}
 
-// /** 
-// * PATCH: /airplane/:id
-// * req.body {capacity:800}
-// **/
-// async function updateAirplane(req,res){
-//     try{
-//         const airplanes = await AirplaneService.updateAirplane(req.params.id,req.body);
-//         SuccessResponse.data = airplanes;
-//         return res
-//                 .status(StatusCodes.OK)
-//                 .json(SuccessResponse)
+/** 
+* PATCH: /cities/:id
+* req.body {name:"Bangalore"}
+**/
+async function updateCity(req,res){
+    try{
+        const city = await CityService.updatecity(req.params.id,req.body);
+        SuccessResponse.data = city;
+        return res
+                .status(StatusCodes.OK)
+                .json(SuccessResponse)
 
-//     }catch(error){
-//         ErrorResponse.error = error;
-//         return res
-//                 .status(error.statusCode)
-//                 .json(ErrorResponse);
+    }catch(error){
+        ErrorResponse.error = error;
+        return res
+                .status(error.statusCode)
+                .json(ErrorResponse);
 
-//     }
-// }
+    }
+}
 
 module.exports = {
     createCity,
-    // getAirplanes,
-    // getAirplane,
-    // destroyAirplane,
-    // updateAirplane
+    getCity,
+    getCities,
+    destroyCity,
+    updateCity
 }
