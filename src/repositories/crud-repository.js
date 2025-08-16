@@ -8,7 +8,6 @@ class CrudRepository{
     }
 
     async create(data){
-            console.log("inside Crud repo : create",data);
             const response = await this.model.create(data);
             return response;
     }
@@ -20,7 +19,7 @@ class CrudRepository{
             }
         });
         if(!response){
-            throw new AppError('Failed to delete airplane data',StatusCodes.NOT_FOUND)
+            throw new AppError('Failed to delete city data',StatusCodes.NOT_FOUND)
         }
         return response;
     }
@@ -45,7 +44,7 @@ class CrudRepository{
             }
         });
         if(!response[0]){
-            throw new AppError('Failed to update airplane data',StatusCodes.NOT_FOUND)
+            throw new AppError('Failed to update city data',StatusCodes.NOT_FOUND)
 
         }
         return response;
