@@ -1,0 +1,19 @@
+added flight model with association 
+
+```
+npx sequelize model:create --name Flight --attributes flightNumber:string,airplaneId:integer,departureAirportId:integer,arrivalAirportId:integer,arrivalTime:date,departureTime:date,price:integer,boardingGate:string,totalSeats:integer
+npx sequelize db:migrate
+```
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	new file:   src/migrations/20250817085038-create-flight.js
+#	modified:   src/models/airplane.js
+#	modified:   src/models/airport.js
+#	modified:   src/models/city.js
+#	new file:   src/models/flight.js
+#
